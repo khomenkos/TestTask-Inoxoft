@@ -1,15 +1,20 @@
-# TestTask
+# TestTask (News App)
 
-## Project Goal
-Demonstration of working with an API, Clean Architecture, Dependency Injection, and data mapping/display.
+## Network & API
+The app uses **[NewsAPI](https://newsapi.org/)** as its data source.
 
-## Requirements
-- iOS 15.0+ (or other minimum version)
-- Xcode 14.0+
-- Swift 5+
+## Architecture: Clean Architecture + MVVM + Coordinators
+Ensures excellent scalability and testability.
+- **Clean Architecture & Dependency Injection**: The project is strictly divided into layers (Presentation, Domain, Data). All external dependencies (repositories, network services) are hidden behind protocols and injected via initializers (DI).
+- **Programmatic UI**: The UI is implemented entirely in code using UIKit + SwiftUI.
+- **Coordinator Pattern**: All navigation logic is extracted into `AppCoordinator`.
 
-## Installation
-1. Clone the repository.
-2. Copy `Secrets.xcconfig.example` to `Secrets.xcconfig`.
-3. Fill in the required keys in `Secrets.xcconfig`.
-4. Run the project in Xcode.
+## Dependencies (Swift Package Manager)
+1. **Alamofire**
+2. **Realm Swift**
+3. **Kingfisher**
+
+## Setup Instructions
+1. In the root directory, rename `Secrets.xcconfig.example` to `Secrets.xcconfig`.
+2. Open `Secrets.xcconfig` and set your personal key:
+   `API_KEY = YOUR_API_KEY_HERE`
